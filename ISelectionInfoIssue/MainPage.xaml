@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="ISelectionInfoIssue.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:ISelectionInfoIssue"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Black"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock Style="{ThemeResource BaseTextBlockStyle}">These two examples have the exact same code except that A) uses a List that implements ISelectionInfo.</TextBlock>
+        <TextBlock>
+            <Run>Repro steps:</Run>
+            <LineBreak />
+            <Run>1) Enable multi-selection by clicking on the checkbox visible on mouse hover.</Run>
+            <LineBreak />
+            <Run>2) Select at least 2 items in total.</Run>
+            <LineBreak />
+            <Run>3) Deselect items until 1 item is selected.</Run>
+            <LineBreak />
+            <Run>Expected: We are back in single selection mode with one selected item.</Run>
+            <LineBreak />
+        </TextBlock>
+        <local:GridViewWithISelectionInfoList Grid.Row="0" />
+        <local:GridViewNormal Grid.Row="1" />
+    </StackPanel>
+</Page>
